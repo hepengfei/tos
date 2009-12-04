@@ -1,0 +1,68 @@
+kebing@debian:~/tos/src$ kebing@debian:~/tos/src$ 
+kebing@debian:~/tos/src$ ./eval -s Huffman.scm
+
+input a symbol list:kebing@debian:~/tos/src$ ./eval -s Huffman.scm
+
+input a symbol list:quit
+kebing@debian:~/tos/src$ quit
+bash: quit: command not found
+kebing@debian:~/tos/src$ ./eval -s Huffman.scm
+
+input a symbol list:a
+please input a list.
+
+input a symbol list:(d e f i n e g e n e r a t e h u f f m a n t r e e l a m b d a p a i r s s u c c e s s i v e m e r g e m a k e l e a f s e t  p a i r s)
+counting frequence...
+((k 1) (v 1) (c 2) (s 6) (p 2) (b 1) (l 2) (m 4) (u 2) (h 1) (t 3) (a 8) (r 5) (g 2) (n 3) (i 4) (f 4) (e 14) (d 2))
+building huffman tree...
+(((leaf e 14) ((leaf a 8) ((leaf f 4) (leaf i 4) (f i) 8) (a f i) 16) (e a f i) 30) ((((leaf m 4) ((leaf d 2) (leaf g 2) (d g) 4) (m d g) 8) (((leaf u 2) (leaf l 2) (u l) 4) ((leaf p 2) (leaf c 2) (p c) 4) (u l p c) 8) (m d g u l p c) 16) (((((leaf h 1) (leaf b 1) (h b) 2) ((leaf v 1) (leaf k 1) (v k) 2) (h b v k) 4) (leaf r 5) (h b v k r) 9) ((leaf s 6) ((leaf n 3) (leaf t 3) (n t) 6) (s n t) 12) (h b v k r s n t) 21) (m d g u l p c h b v k r s n t) 37) (e a f i m d g u l p c h b v k r s n t) 67)
+encoding message...
+(1 0 0 1 0 0 0 0 1 1 0 0 1 1 1 1 1 1 1 0 0 0 1 0 0 1 1 0 0 1 1 1 1 0 0 0 1 1 0 1 0 1 0 1 1 1 1 1 0 0 1 1 0 0 0 0 1 0 1 0 0 0 1 1 0 0 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 1 1 1 1 1 1 0 1 0 0 0 0 1 0 1 0 1 0 1 0 1 0 0 0 1 1 0 0 0 1 1 0 0 1 0 0 1 0 1 0 1 1 0 0 1 0 0 1 1 1 1 1 0 1 1 1 1 0 1 1 1 0 1 0 1 0 0 1 0 1 1 1 1 0 1 1 1 0 0 1 1 1 0 1 1 1 0 0 1 1 1 1 1 0 0 1 0 0 0 1 0 0 0 0 0 1 1 0 1 1 0 0 1 1 0 0 1 0 0 0 0 1 0 1 1 0 0 1 1 0 0 1 0 1 0 1 0 0 0 1 0 0 1 1 0 1 1 1 0 0 0 1 1 1 1 1 1 0 1 1 0 0 1 0 0 1 1 1 1 1 0 1 1 1 1 0)
+recovering message from bits...
+(d e f i n e g e n e r a t e h u f f m a n t r e e l a m b d a p a i r s s u c c e s s i v e m e r g e m a k e l e a f s e t p a i r s)
+input a symbol list:
+(define encode lambda message tree define encode-symbol lambda symbol tree define search-symbol lambda tree if memq symbol symbols tree if leaf? tree lambda result if result cons 0 result lambda result if result cons 1 result begin error cannot find symbol in tree -- ENCODE symbol search-symbol right-branch tree search-symbol left-branch tree search-symbol tree if null? message append encode-symbol car message tree encode cdr message tree)
+
+invalid identifier
+
+kebing@debian:~/tos/src$ ./eval -s Huffman.scm
+
+input a symbol list:(define encode lambda message tree define encode-symbol lambda symbol tree define search-symbol lambda tree if memq symbol symbols tree if leaf? tree lambda result if result cons 0 result lambda result if result cons 1 result begin error cannot find symbol in tree -- ENCODE symbol search-symbol right-branch tree search-symbol left-branch tree search-symbol tree if null? message append encode-symbol car message tree encode cdr message tree)
+
+invalid identifier
+
+kebing@debian:~/tos/src$ ./eval -s Huffman.scm
+
+input a symbol list:(define encode lambda message tree define encode-symbol lambda symbol tree define search-symbol lambda tree if memq symbol symbols tree if leaf? tree lambda result if result cons 0 result lambda result if result cons 1 result begin error cannot find symbol in tree ENCODE symbol search-symbol right-branch tree search-symbol left-branch tree search-symbol tree if null? message append encode-symbol car message tree encode cdr message tree)
+counting frequence...
+((cdr 1) (car 1) (append 1) (null? 1) (left-branch 1) (right-branch 1) (in 1) (find 1) (cannot 1) (error 1) (begin 1) (1 1) (0 1) (cons 2) (result 6) (leaf? 1) (symbols 1) (memq 1) (if 5) (search-symbol 4) (symbol 4) (encode-symbol 2) (tree 11) (message 4) (lambda 5) (encode 3) (define 3))
+building huffman tree...
+((((leaf result 6) ((leaf define 3) (leaf encode 3) (define encode) 6) (result define encode) 12) (((leaf message 4) (leaf symbol 4) (message symbol) 8) ((leaf search-symbol 4) ((leaf encode-symbol 2) (leaf cons 2) (encode-symbol cons) 4) (search-symbol encode-symbol cons) 8) (message symbol search-symbol encode-symbol cons) 16) (result define encode message symbol search-symbol encode-symbol cons) 28) ((((((leaf memq 1) (leaf symbols 1) (memq symbols) 2) ((leaf leaf? 1) (leaf 0 1) (leaf? 0) 2) (memq symbols leaf? 0) 4) (((leaf 1 1) (leaf begin 1) (1 begin) 2) ((leaf error 1) (leaf cannot 1) (error cannot) 2) (1 begin error cannot) 4) (memq symbols leaf? 0 1 begin error cannot) 8) ((((leaf find 1) (leaf in 1) (find in) 2) ((leaf right-branch 1) (leaf left-branch 1) (right-branch left-branch) 2) (find in right-branch left-branch) 4) (((leaf null? 1) (leaf append 1) (null? append) 2) ((leaf car 1) (leaf cdr 1) (car cdr) 2) (null? append car cdr) 4) (find in right-branch left-branch null? append car cdr) 8) (memq symbols leaf? 0 1 begin error cannot find in right-branch left-branch null? append car cdr) 16) (((leaf lambda 5) (leaf if 5) (lambda if) 10) (leaf tree 11) (lambda if tree) 21) (memq symbols leaf? 0 1 begin error cannot find in right-branch left-branch null? append car cdr lambda if tree) 37) (result define encode message symbol search-symbol encode-symbol cons memq symbols leaf? 0 1 begin error cannot find in right-branch left-branch null? append car cdr lambda if tree) 65)
+encoding message...
+ enter Heap::gcStopAndCopy
+ exit Heap::gcStopAndCopy
+(0 0 1 0 0 0 1 1 1 1 0 0 0 1 0 0 1 1 1 0 0 1 0 0 1 1 1 0 1 1 0 0 0 1 0 1 1 1 1 0 0 1 0 0 1 1 0 1 1 0 0 1 1 1 1 1 0 1 1 0 0 0 0 0 0 1 0 1 1 0 0 0 0 1 1 1 1 1 1 0 1 1 0 0 0 1 0 1 1 1 1 1 0 0 0 0 0 1 1 0 1 0 0 0 0 1 1 1 1 1 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 1 1 0 1 0 0 0 0 1 1 1 1 1 0 0 1 0 0 0 0 0 1 0 0 1 0 1 1 0 0 1 1 0 1 0 0 1 1 1 1 0 1 0 0 0 0 1 0 1 1 0 1 0 0 1 1 1 1 0 0 1 1 0 1 0 1 0 1 1 0 1 0 1 0 1 0 1 1 1 0 1 1 0 1 0 1 0 1 1 1 1 1 0 1 1 0 1 1 1 1 1 0 1 1 0 1 1 0 0 0 1 0 0 1 0 1 1 0 1 0 1 1 1 0 1 0 1 1 1 0 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 0 1 0 0 1 1 1)
+recovering message from bits...
+(define encode lambda message tree define encode-symbol lambda symbol tree define search-symbol lambda tree if memq symbol symbols tree if leaf? tree lambda result if result cons 0 result lambda result if result cons 1 result begin error cannot find symbol in tree encode symbol search-symbol right-branch tree search-symbol left-branch tree search-symbol tree if null? message append encode-symbol car message tree encode cdr message tree)
+input a symbol list:
+(d e f i n e e n c o d e l a m b d a m e s s a g e t r e e d e f i n e e n c o d e s y m b o l l a m b d a s y m b o l t r e e d e f i n e s e a r c h s y m b o l l a m b d a t r e e i f m e m q s y m b o l s y m b o l s t r e e i f l e a f t r e e l a m b d a r e s u l t i f r e s u l t c o n s 0 r e s u l t l a m b d a r e s u l t i f r e s u l t c o n s 1 r e s u l t b e g i n e r r o r c a n n o t f i n d s y m b o l i n t r e e E N C O D E s y m b o l s e a r c h s y m b o l r i g h t b r a n c h t r e e s e a r c h s y m b o l l e f t b r a n c h t r e e s e a r c h s y m b o l t r e e i f n u l l m e s s a g e a p p e n d e n c o d e s y m b o l c a r m e s s a g e t r e e e n c o d e c d r m e s s a g e t r e e)
+counting frequence...
+ enter Heap::gcStopAndCopy
+ exit Heap::gcStopAndCopy
+((p 2) (1 1) (0 1) (u 7) (q 1) (h 7) (y 11) (r 29) (t 20) (g 6) (s 32) (b 19) (m 22) (a 24) (l 26) (o 20) (c 16) (n 19) (i 12) (f 11) (e 62) (d 16))
+building huffman tree...
+((((leaf s 32) ((leaf c 16) (leaf n 19) (c n) 35) (s c n) 67) (((leaf b 19) (leaf o 20) (b o) 39) ((leaf t 20) (leaf m 22) (t m) 42) (b o t m) 81) (s c n b o t m) 148) (((((leaf f 11) (leaf y 11) (f y) 22) (((((leaf q 1) (leaf 0 1) (q 0) 2) ((leaf 1 1) (leaf p 2) (1 p) 3) (q 0 1 p) 5) (leaf g 6) (q 0 1 p g) 11) (leaf i 12) (q 0 1 p g i) 23) (f y q 0 1 p g i) 45) ((leaf a 24) (leaf l 26) (a l) 50) (f y q 0 1 p g i a l) 95) (((leaf r 29) (((leaf h 7) (leaf u 7) (h u) 14) (leaf d 16) (h u d) 30) (r h u d) 59) (leaf e 62) (r h u d e) 121) (f y q 0 1 p g i a l r h u d e) 216) (s c n b o t m f y q 0 1 p g i a l r h u d e) 364)
+encoding message...
+ enter Heap::gcStopAndCopy
+ exit Heap::gcStopAndCopy
+ enter Heap::gcStopAndCopy
+ exit Heap::gcStopAndCopy
+ enter Heap::gcStopAndCopy
+ exit Heap::gcStopAndCopy
+ enter Heap::gcStopAndCopy
+ exit Heap::gcStopAndCopy
+(1 1 0 1 1 1 1 1 1 0 0 0 0 1 0 0 1 1 0 0 1 1 1 1 1 1 1 1 0 0 1 1 0 0 1 0 0 1 0 1 1 1 0 1 1 1 1 1 1 0 1 1 1 0 1 0 0 1 1 1 0 1 0 0 1 1 0 1 1 1 0 1 0 0 1 1 1 1 1 1 0 0 0 0 0 0 1 0 1 0 1 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 0 0 0 0 1 0 0 1 1 0 0 1 1 1 1 1 1 1 1 0 0 1 1 0 0 1 0 0 1 0 1 1 1 0 1 1 1 1 1 0 0 0 1 0 0 0 1 0 1 1 1 0 1 0 0 0 1 0 1 1 0 1 1 1 0 1 1 1 0 1 0 0 1 1 1 0 1 0 0 1 1 0 1 1 1 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 0 0 0 1 0 1 1 0 1 1 0 1 1 0 1 1 0 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 0 0 0 0 1 0 0 1 1 0 0 1 1 1 1 1 0 0 0 1 1 1 1 0 1 0 1 1 0 0 0 0 1 0 1 1 0 1 0 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 0 0 0 1 0 1 1 0 1 1 1 0 1 1 1 0 1 0 0 1 1 1 0 1 0 0 1 1 0 1 1 1 0 1 0 0 1 1 0 1 1 0 0 1 1 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 1 1 1 1 1 1 0 1 1 1 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 0 0 0 1 0 1 1 0 1 1 0 0 0 1 0 0 0 1 0 1 1 1 0 1 0 0 0 1 0 1 1 0 1 1 0 0 0 0 1 1 0 1 1 0 0 1 1 1 1 1 1 1 0 0 1 1 1 0 0 0 0 1 0 1 1 1 1 1 1 0 1 0 1 0 0 0 0 0 1 1 0 1 1 0 0 1 1 1 1 1 1 1 0 1 1 1 0 1 0 0 1 1 1 0 1 0 0 1 1 0 1 1 1 0 1 0 1 1 0 0 1 1 1 0 0 0 1 1 0 1 0 1 1 0 1 1 0 1 1 0 1 0 0 1 1 1 0 0 0 0 1 1 0 0 1 1 1 0 0 0 1 1 0 1 0 1 1 0 1 1 0 1 1 0 0 0 1 0 0 1 0 1 0 0 1 1 0 0 0 1 0 0 1 0 0 0 1 1 1 0 0 1 1 1 0 0 0 1 1 0 1 0 1 1 0 1 1 0 1 1 0 1 0 1 1 1 0 1 0 0 1 1 1 0 1 0 0 1 1 0 1 1 1 0 1 0 1 1 0 0 1 1 1 0 0 0 1 1 0 1 0 1 1 0 1 1 0 1 1 0 1 0 0 1 1 1 0 0 0 0 1 1 0 0 1 1 1 0 0 0 1 1 0 1 0 1 1 0 1 1 0 1 1 0 0 0 1 0 0 1 0 1 0 0 1 1 0 0 0 1 0 0 1 0 0 1 0 1 1 0 0 1 1 1 0 0 0 1 1 0 1 0 1 1 0 1 1 0 1 1 0 0 1 0 0 1 1 1 1 0 0 1 0 1 1 0 0 1 1 0 0 1 1 1 1 1 1 1 0 0 1 1 0 0 0 1 0 1 1 1 0 0 0 0 1 0 1 0 1 0 0 0 1 1 0 0 1 1 0 1 0 1 0 1 1 0 1 0 0 0 0 1 0 0 1 1 0 0 1 1 1 1 0 1 1 0 0 0 1 0 0 0 1 0 1 1 1 0 1 0 0 0 1 0 1 1 0 1 1 1 0 0 1 1 0 0 1 1 0 1 1 0 1 1 0 0 1 1 1 1 1 1 1 1 1 0 0 1 1 0 0 1 0 0 1 0 1 1 1 0 1 1 1 1 1 0 0 0 1 0 0 0 1 0 1 1 1 0 1 0 0 0 1 0 1 1 0 1 1 0 0 0 1 1 1 1 0 1 0 1 1 0 0 0 0 1 0 1 1 0 1 0 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 0 0 0 1 0 1 1 0 1 1 1 1 0 0 1 0 0 1 1 1 0 0 1 0 1 1 1 0 1 0 0 0 1 1 0 0 1 0 0 1 1 0 0 1 0 1 0 0 0 1 1 0 0 1 0 1 1 0 1 0 0 0 1 1 0 1 1 0 0 1 1 1 1 1 1 0 0 0 1 1 1 1 0 1 0 1 1 0 0 0 0 1 0 1 1 0 1 0 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 0 0 0 1 0 1 1 0 1 1 1 0 1 1 1 1 1 1 0 0 0 0 0 1 1 0 0 1 0 0 1 1 0 0 1 0 1 0 0 0 1 1 0 0 1 0 1 1 0 1 0 0 0 1 1 0 1 1 0 0 1 1 1 1 1 1 0 0 0 1 1 1 1 0 1 0 1 1 0 0 0 0 1 0 1 1 0 1 0 0 0 0 0 1 0 0 0 1 0 1 1 1 0 1 0 0 0 1 0 1 1 0 1 1 0 1 1 0 1 1 0 0 1 1 1 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0 1 1 1 1 0 1 0 1 1 0 1 1 1 0 1 1 0 1 1 1 1 1 1 0 0 0 0 0 0 1 0 1 0 1 0 0 1 0 1 1 1 1 1 0 1 0 1 0 0 1 0 0 1 1 1 0 0 1 0 0 1 1 1 1 1 0 0 1 1 1 1 0 1 1 1 1 1 0 0 1 1 0 0 1 0 0 1 0 1 1 1 0 1 1 1 1 1 0 0 0 1 0 0 0 1 0 1 1 1 0 1 0 0 0 1 0 1 1 0 1 1 0 0 1 0 1 0 1 0 1 1 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 1 0 1 0 1 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 0 1 1 1 1 1 1 1 1 1 0 0 1 1 0 0 1 0 0 1 0 1 1 1 0 1 1 1 1 1 0 0 1 0 1 1 0 1 1 1 1 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 1 0 1 0 1 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 0 1 1 1 1 1 1)
+recovering message from bits...
+(d e f i n e e n c o d e l a m b d a m e s s a g e t r e e d e f i n e e n c o d e s y m b o l l a m b d a s y m b o l t r e e d e f i n e s e a r c h s y m b o l l a m b d a t r e e i f m e m q s y m b o l s y m b o l s t r e e i f l e a f t r e e l a m b d a r e s u l t i f r e s u l t c o n s 0 r e s u l t l a m b d a r e s u l t i f r e s u l t c o n s 1 r e s u l t b e g i n e r r o r c a n n o t f i n d s y m b o l i n t r e e e n c o d e s y m b o l s e a r c h s y m b o l r i g h t b r a n c h t r e e s e a r c h s y m b o l l e f t b r a n c h t r e e s e a r c h s y m b o l t r e e i f n u l l m e s s a g e a p p e n d e n c o d e s y m b o l c a r m e s s a g e t r e e e n c o d e c d r m e s s a g e t r e e)
+input a symbol list:quit
+kebing@debian:~/tos/src$ 
