@@ -3,6 +3,8 @@
 
 #include "Main.hpp"
 
+#include <limits>
+
 #include "Exception.hpp"
 #include "Machine.hpp"
 #include "Parser.hpp"
